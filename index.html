@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41C8GSM3WH"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-41C8GSM3WH');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Auto Loan & Personal Loan EMI Calculator Online (2026)</title>
+
+<meta name="description" content="Free online Auto Loan and Personal Loan EMI Calculator. Calculate monthly EMI, total interest, and amortization schedule for car, bike, and personal loans instantly.">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="FinanceCalculators Editorial Team">
+<meta name="theme-color" content="#0b1220">
+
+<link rel="canonical" href="https://finance.pdfgridbox.in/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Auto Loan & Personal Loan EMI Calculator">
+<meta property="og:description" content="Calculate your car loan, bike loan, and personal loan EMIs instantly with interactive sliders and interest breakup.">
+<meta property="og:url" content="https://finance.pdfgridbox.in/">
+<meta property="og:site_name" content="FinanceCalculators">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Auto & Personal Loan EMI Calculator">
+<meta name="twitter:description" content="Calculate monthly loan EMIs, interest payable, and down payment breakup online.">
+
+<!-- WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Auto & Personal Loan EMI Calculator",
+  "url": "https://finance.pdfgridbox.in/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Calculate car loan, bike loan, and personal loan EMIs with instant principal and interest breakdown.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "FinanceCalculators",
+    "url": "https://finance.pdfgridbox.in/"
+  }
+}
+</script>
+
+<style>
+:root{
+    --bg:#f4f7fc;
+    --card:#ffffff;
+    --text:#111827;
+    --muted:#5d687b;
+    --primary:#075bd8;
+    --primary-dark:#0648aa;
+    --accent:#087443;
+    --border:#e2e8f0;
+    --soft-blue:#eef5ff;
+    --soft-green:#eefaf4;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.6;
+}
+
+.navbar{
+    background:#0b1220;
+    color:white;
+    padding:16px 20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.nav-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:800;
+    color:#fff;
+    text-decoration:none;
+}
+
+.logo span{ color:#3b82f6; }
+
+.page{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 20px;
+}
+
+.hero{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:clamp(26px,4vw,38px);
+    margin:0 0 10px;
+    color:#0f172a;
+    letter-spacing:-0.5px;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:16px;
+    margin:0;
+}
+
+/* Tabs */
+.tab-container{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.tab-btn{
+    background:#e2e8f0;
+    border:none;
+    padding:12px 24px;
+    border-radius:99px;
+    font-size:15px;
+    font-weight:700;
+    color:#475569;
+    cursor:pointer;
+    transition:all 0.2s ease;
+}
+
+.tab-btn.active{
+    background:var(--primary);
+    color:white;
+    box-shadow:0 4px 14px rgba(7,91,216,0.25);
+}
+
+/* Main Layout */
+.calc-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.calc-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 6px 25px rgba(0,0,0,0.03);
+}
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.label-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.label-row label{
+    font-weight:700;
+    font-size:14px;
+    color:#1e293b;
+}
+
+.val-box{
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:6px 12px;
+    font-weight:800;
+    color:var(--primary-dark);
+    font-size:15px;
+}
+
+.val-box input{
+    border:none;
+    background:transparent;
+    text-align:right;
+    font-weight:800;
+    font-size:15px;
+    color:var(--primary-dark);
+    width:100px;
+    outline:none;
+}
+
+input[type=range]{
+    width:100%;
+    height:6px;
+    background:#cbd5e1;
+    border-radius:5px;
+    outline:none;
+    accent-color:var(--primary);
+    cursor:pointer;
+}
+
+/* Results Card */
+.result-card{
+    background:linear-gradient(145deg, #0f172a, #1e293b);
+    color:white;
+    border-radius:18px;
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    box-shadow:0 8px 30px rgba(15,23,42,0.15);
+}
+
+.emi-display{
+    text-align:center;
+    padding:15px 0 25px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.emi-title{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#94a3b8;
+}
+
+.emi-amount{
+    font-size:36px;
+    font-weight:900;
+    color:#38bdf8;
+    margin:6px 0 0;
+}
+
+.summary-rows{
+    margin:20px 0;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    font-size:14px;
+}
+
+.summary-row span{ color:#cbd5e1; }
+.summary-row strong{ color:white; }
+
+.bar-container{
+    height:12px;
+    background:#334155;
+    border-radius:99px;
+    overflow:hidden;
+    display:flex;
+    margin-top:15px;
+}
+
+.bar-principal{ background:#38bdf8; height:100%; transition:width 0.3s; }
+.bar-interest{ background:#f43f5e; height:100%; transition:width 0.3s; }
+
+.bar-legend{
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    margin-top:8px;
+    color:#94a3b8;
+}
+
+/* Content & FAQs */
+.content-box{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+.content-box h2{ font-size:22px; color:#0f172a; margin-top:0; }
+.content-box p{ color:#475569; font-size:15px; }
+
+.faq-item{
+    border-bottom:1px solid var(--border);
+    padding:14px 0;
+}
+
+.faq-item h3{ font-size:16px; margin:0 0 6px; color:#1e293b; }
+.faq-item p{ font-size:14px; margin:0; color:#64748b; }
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+@media(max-width:768px){
+    .calc-grid{ grid-template-columns:1fr; }
+    .page{ padding:15px; }
+    .calc-card{ padding:20px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="logo">Finance<span>Calculators</span></a>
+    </div>
+</nav>
+
+<div class="page">
+
+    <section class="hero">
+        <h1>Auto Loan & Personal Loan EMI Calculator</h1>
+        <p>Calculate your exact monthly payments, total interest payable, and loan breakdown instantly.</p>
+    </section>
+
+    <!-- Tab Switcher -->
+    <div class="tab-container">
+        <button class="tab-btn active" id="tab-auto" onclick="switchTab('auto')">🚗 Auto Loan Calculator</button>
+        <button class="tab-btn" id="tab-personal" onclick="switchTab('personal')">💼 Personal Loan Calculator</button>
+    </div>
+
+    <!-- Calculator Grid -->
+    <div class="calc-grid">
+
+        <!-- Controls Card -->
+        <div class="calc-card">
+
+            <!-- Field 1: Vehicle Price / Loan Amount -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label id="lbl-amount">Vehicle Ex-Showroom Price (₹)</label>
+                    <div class="val-box">₹ <input type="number" id="num-amount" value="800000" step="10000"></div>
+                </div>
+                <input type="range" id="rng-amount" min="50000" max="5000000" step="10000" value="800000">
+            </div>
+
+            <!-- Field 2: Down Payment (Only for Auto Loan) -->
+            <div class="input-group" id="grp-downpayment">
+                <div class="label-row">
+                    <label>Down Payment Amount (₹)</label>
+                    <div class="val-box">₹ <input type="number" id="num-down" value="150000" step="5000"></div>
+                </div>
+                <input type="range" id="rng-down" min="0" max="400000" step="5000" value="150000">
+            </div>
+
+            <!-- Field 3: Interest Rate -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label>Annual Interest Rate (%)</label>
+                    <div class="val-box"><input type="number" id="num-rate" value="8.75" step="0.1">%</div>
+                </div>
+                <input type="range" id="rng-rate" min="5" max="24" step="0.1" value="8.75">
+            </div>
+
+            <!-- Field 4: Loan Tenure -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label>Loan Tenure (Years)</label>
+                    <div class="val-box"><input type="number" id="num-tenure" value="5" min="1" max="10"> Yrs</div>
+                </div>
+                <input type="range" id="rng-tenure" min="1" max="7" step="1" value="5">
+            </div>
+
+        </div>
+
+        <!-- Result Card -->
+        <div class="result-card">
+            <div>
+                <div class="emi-display">
+                    <div class="emi-title">Monthly Loan EMI</div>
+                    <div class="emi-amount" id="res-emi">₹13,422</div>
+                </div>
+
+                <div class="summary-rows">
+                    <div class="summary-row">
+                        <span>Net Principal Loan Amount</span>
+                        <strong id="res-principal">₹6,50,000</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Total Interest Payable</span>
+                        <strong id="res-interest" style="color:#f43f5e;">₹1,55,320</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Total Amount Payable</span>
+                        <strong id="res-total">₹8,05,320</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="bar-container">
+                    <div class="bar-principal" id="bar-p" style="width: 80%;"></div>
+                    <div class="bar-interest" id="bar-i" style="width: 20%;"></div>
+                </div>
+                <div class="bar-legend">
+                    <span>■ Principal (<span id="pct-p">80</span>%)</span>
+                    <span>■ Interest (<span id="pct-i">20</span>%)</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SEO & Explanatory Content -->
+    <div class="content-box">
+        <h2>How Auto Loan & Personal Loan EMIs Are Calculated</h2>
+        <p>
+            An <strong>Equated Monthly Installment (EMI)</strong> is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are applied to both car loans, bike loans, and personal loans to clear the principal and interest over a specified tenure.
+        </p>
+
+        <h3>Standard EMI Calculation Formula</h3>
+        <p>
+            EMIs are calculated using the standard financial formula:
+            <code>EMI = [P x R x (1+R)^N] / [(1+R)^N - 1]</code>
+            where <strong>P</strong> is the Principal loan amount, <strong>R</strong> is the monthly interest rate, and <strong>N</strong> is the tenure in months.
+        </p>
+
+        <h2>Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-item">
+            <h3>What is the difference between Auto Loan and Personal Loan interest rates?</h3>
+            <p>Auto loans are secured loans backed by the vehicle itself, usually offering lower interest rates (ranging from 8% to 11%). Personal loans are unsecured loans with higher risk for banks, leading to interest rates between 10.5% and 24%.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does down payment affect my Car Loan EMI?</h3>
+            <p>A higher down payment reduces the net principal loan amount required from the bank, directly lowering both your monthly EMI and total interest burden.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I pre-pay or foreclose my loan early?</h3>
+            <p>Yes. Most banks allow foreclosure or partial pre-payment after completing 6 to 12 EMIs, though floating-rate loans typically have zero foreclosure charges compared to fixed-rate personal loans.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        © 2026 FinanceCalculators. All rights reserved. | <a href="https://pdfgridbox.in" style="color:var(--primary);">PDFGridBox Network</a>
+    </footer>
+
+</div>
+
+<script>
+let currentMode = 'auto'; // 'auto' or 'personal'
+
+// Switch Tab
+function switchTab(mode) {
+    currentMode = mode;
+    document.getElementById('tab-auto').classList.toggle('active', mode === 'auto');
+    document.getElementById('tab-personal').classList.toggle('active', mode === 'personal');
+
+    const downGrp = document.getElementById('grp-downpayment');
+    const lblAmount = document.getElementById('lbl-amount');
+    const rngTenure = document.getElementById('rng-tenure');
+
+    if (mode === 'auto') {
+        downGrp.style.display = 'block';
+        lblAmount.innerText = 'Vehicle Ex-Showroom Price (₹)';
+        rngTenure.max = 7;
+        document.getElementById('num-amount').value = 800000;
+        document.getElementById('rng-amount').value = 800000;
+        document.getElementById('num-rate').value = 8.75;
+        document.getElementById('rng-rate').value = 8.75;
+    } else {
+        downGrp.style.display = 'none';
+        lblAmount.innerText = 'Required Personal Loan Amount (₹)';
+        rngTenure.max = 5;
+        document.getElementById('num-amount').value = 300000;
+        document.getElementById('rng-amount').value = 300000;
+        document.getElementById('num-rate').value = 12.5;
+        document.getElementById('rng-rate').value = 12.5;
+    }
+    syncAndCalculate();
+}
+
+// Bind Sliders and Inputs
+const inputs = [
+    { num: 'num-amount', rng: 'rng-amount' },
+    { num: 'num-down', rng: 'rng-down' },
+    { num: 'num-rate', rng: 'rng-rate' },
+    { num: 'num-tenure', rng: 'rng-tenure' }
+];
+
+inputs.forEach(pair => {
+    const n = document.getElementById(pair.num);
+    const r = document.getElementById(pair.rng);
+
+    n.addEventListener('input', () => { r.value = n.value; calculate(); });
+    r.addEventListener('input', () => { n.value = r.value; calculate(); });
+});
+
+function syncAndCalculate() {
+    inputs.forEach(pair => {
+        document.getElementById(pair.rng).value = document.getElementById(pair.num).value;
+    });
+    calculate();
+}
+
+function calculate() {
+    let rawAmount = parseFloat(document.getElementById('num-amount').value) || 0;
+    let downPayment = (currentMode === 'auto') ? (parseFloat(document.getElementById('num-down').value) || 0) : 0;
+    
+    // Auto-adjust down payment if higher than vehicle price
+    if (downPayment >= rawAmount && currentMode === 'auto') {
+        downPayment = rawAmount * 0.2;
+        document.getElementById('num-down').value = downPayment;
+        document.getElementById('rng-down').value = downPayment;
+    }
+    
+    document.getElementById('rng-down').max = rawAmount;
+
+    let principal = rawAmount - downPayment;
+    let annualRate = parseFloat(document.getElementById('num-rate').value) || 0;
+    let tenureYears = parseFloat(document.getElementById('num-tenure').value) || 1;
+
+    let monthlyRate = annualRate / 12 / 100;
+    let totalMonths = tenureYears * 12;
+
+    let emi = 0;
+    if (monthlyRate > 0) {
+        emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+    } else {
+        emi = principal / totalMonths;
+    }
+
+    let totalPayment = emi * totalMonths;
+    let totalInterest = totalPayment - principal;
+
+    // Display Results
+    document.getElementById('res-emi').innerText = '₹' + Math.round(emi).toLocaleString('en-IN');
+    document.getElementById('res-principal').innerText = '₹' + Math.round(principal).toLocaleString('en-IN');
+    document.getElementById('res-interest').innerText = '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+    document.getElementById('res-total').innerText = '₹' + Math.round(totalPayment).toLocaleString('en-IN');
+
+    // Bar percentages
+    let pPct = Math.round((principal / totalPayment) * 100) || 0;
+    let iPct = 100 - pPct;
+
+    document.getElementById('bar-p').style.width = pPct + '%';
+    document.getElementById('bar-i').style.width = iPct + '%';
+    document.getElementById('pct-p').innerText = pPct;
+    document.getElementById('pct-i').innerText = iPct;
+}
+
+// Initial calculation
+calculate();
+</script>
+
+</body>
+</html>
+
